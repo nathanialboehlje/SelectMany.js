@@ -17,16 +17,24 @@ var SelectMany = {
     displayMessage() { 
         window.alert(this.message); 
     }, 
-    processElement(el){ 
-        console.log(el); 
+    processElement(el) { 
         const options = Object.keys(el); 
         const selectOptions = []; 
         options.forEach(x => { 
-            console.log(el[x]); 
             selectOptions.push(el[x].innerText); 
         })
 
-        console.log(selectOptions);  
+
         
+    }, 
+    invalid(validationMsg) {
+        if (validationMsg != null) { 
+            this.validationMsg = validationMsg;
+            this.displayValMsg(); 
+        } 
+    }, 
+    displayValMsg() { 
+        window.alert(this.validationMsg); 
     }
 }
+
